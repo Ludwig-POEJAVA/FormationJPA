@@ -11,18 +11,16 @@ public class Exercice01
 	public static void main(String[] Args)
 	{
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hibernate");
-
-		System.out.println("ca plante juste avant cette ligne");
 		EntityManager em = emf.createEntityManager();
 
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		// String query = "SELECT * FROM test";
 		// String query = "insert 'abcdefghi' into table";
-		String query = "INSERT INTO TEST VALUES('Exercice 01')";
+		String query = "INSERT INTO TEST VALUES('Exercice 01 :(')";
 		Query q = em.createNativeQuery(query);
 		int upd = q.executeUpdate();
-		System.out.println(upd);
+		System.out.println("***-> upd = " + upd);
 
 		tx.commit();
 
