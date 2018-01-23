@@ -13,13 +13,13 @@ public class Adresse
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	// @NotNull
+	@Column(nullable = false)
 	private String ligne1;
 	private String ligne2;
 	private String ligne3;
-	// @NotNull
+	@Column(nullable = false)
 	private String codePostal;
-	// @NotNull
+	@Column(nullable = false)
 	private String ville;
 
 	public Adresse(String ligne1, String ligne2, String ligne3, String codePostal, String ville)
