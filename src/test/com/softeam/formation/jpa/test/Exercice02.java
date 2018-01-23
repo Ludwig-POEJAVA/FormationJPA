@@ -24,7 +24,7 @@ public class Exercice02
 		adresses.add(new Adresse("a", "h", "i", "22000", "Pluiville"));
 		adresses.add(new Adresse("j", null, "k", "22000", "Pluiville"));
 		adresses.add(new Adresse("k", "m", null, "22000", "Pluiville"));
-		adresses.add(new Adresse("n", "o", "p", null, "Pluiville"));
+		// adresses.add(new Adresse("n", "o", "p", null, "Pluiville"));
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hibernate");
 		EntityManager em = emf.createEntityManager();
@@ -33,7 +33,14 @@ public class Exercice02
 
 		for (Adresse a : adresses)
 		{
-			em.persist(a);
+			try
+			{
+				em.persist(a);
+			}
+			catch (Exception e)
+			{
+				System.out.println("PROBLEME********************************");
+			}
 		}
 
 		tx.commit();
