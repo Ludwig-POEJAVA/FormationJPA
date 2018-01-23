@@ -148,3 +148,27 @@ INSERT INTO T_ADRESSE VALUES(34,'22000','k','m',NULL,'Pluiville')
 ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 35
 COMMIT
 DISCONNECT
+/*C29*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C28*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C32*/SET SCHEMA PUBLIC
+create table T_PROJET (PROJET_ID bigint not null, name varchar(255), primary key (PROJET_ID))
+create table T_REUNION (REUNION_ID bigint not null, name varchar(255), PROJET_ID_fk bigint, SALLE_ID_fk bigint, primary key (REUNION_ID))
+create table T_SALLE (SALLE_ID bigint not null, name varchar(255), primary key (SALLE_ID))
+alter table T_REUNION add constraint FK6n4k05vewj7o0sr53fs2lhc41 foreign key (PROJET_ID_fk) references T_PROJET
+alter table T_REUNION add constraint FKruj2w956yyt6glxmgh22v70ct foreign key (SALLE_ID_fk) references T_SALLE
+INSERT INTO T_ADRESSE VALUES(35,'56000','a','b','c','Morbihan Ind\u00e9pendant')
+INSERT INTO T_ADRESSE VALUES(36,'29000','d','e','f','Humideland')
+INSERT INTO T_ADRESSE VALUES(37,'22000','a','h','i','Pluiville')
+INSERT INTO T_ADRESSE VALUES(38,'22000','j',NULL,'k','Pluiville')
+INSERT INTO T_ADRESSE VALUES(39,'22000','k','m',NULL,'Pluiville')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 40
+COMMIT
+DISCONNECT
+/*C33*/SET SCHEMA PUBLIC
+alter table PUBLIC.T_REUNION add column dateDebut timestamp
+alter table PUBLIC.T_REUNION add column dateFin timestamp
+alter table PUBLIC.T_SALLE add column nbPlaces integer not null
+DISCONNECT
+/*C2*/DISCONNECT
