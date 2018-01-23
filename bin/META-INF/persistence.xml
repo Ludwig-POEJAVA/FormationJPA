@@ -6,9 +6,12 @@
 	<persistence-unit name="hibernate" transaction-type="RESOURCE_LOCAL">
 	<!-- Provider Hibernate -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		
+
 		<!--les classes JAVA sont associées aux persistances-units-->
 		<class>com.softeam.formation.hibernate.metier.modele.Adresse</class>
+		<class>com.softeam.formation.hibernate.metier.modele.Projet</class>
+		<class>com.softeam.formation.hibernate.metier.modele.Reunion</class>
+		<class>com.softeam.formation.hibernate.metier.modele.Salle</class>
 
 		<properties>
 		<!-- Configuration de l'accès à la base de données -->
