@@ -25,12 +25,21 @@ public class ProjetDAO
 
 		tx.commit();
 		em.close();
-		System.out.println("======= ai créé PROJET avec ID " + p.getProjet_id());
+		System.out.println("\n======= ai créé PROJET avec ID " + p.getProjet_id() + "\n");
 		return p.getProjet_id();
 	}
 
-	public Projet lire()
+	public static Projet lire(long id)
 	{
-		return null;
+
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+
+		Projet p = em.find(Projet.class, id);
+
+		tx.commit();
+		em.close();
+		return p;
 	}
 }

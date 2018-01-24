@@ -25,7 +25,7 @@ public class ReunionDAO
 
 		tx.commit();
 		em.close();
-		System.out.println("======= ai créé REUNION avec ID " + r.getReunion_id());
+		System.out.println("\n======= ai créé REUNION avec ID " + r.getReunion_id() + "\n");
 		return r.getReunion_id();
 	}
 

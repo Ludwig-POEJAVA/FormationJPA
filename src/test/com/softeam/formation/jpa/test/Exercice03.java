@@ -48,8 +48,12 @@ public class Exercice03
 		SalleDAO sDAO = new SalleDAO(emf);
 		ReunionDAO rDAO = new ReunionDAO(emf);
 
+		ArrayList<Long> p_id = new ArrayList<Long>();
+
 		for (Projet p : projets)
-			pDAO.ajouter(p);
+		{
+			p_id.add(pDAO.ajouter(p));
+		}
 
 		for (Salle s : salles)
 			sDAO.ajouter(s);
@@ -57,9 +61,17 @@ public class Exercice03
 		for (Reunion r : reunions)
 			rDAO.ajouter(r);
 
+		System.out.println("\n\n\n\n\nWOOT\n\n\n\n\n\n\n\n\n\n\n");
+		projets.clear();
+		for (Long p : p_id)
+		{
+			projets.add(ProjetDAO.lire(p));
+
+			System.out.println(projets.get(projets.size() - 1).getName());
+		}
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 		emf.close();
-
 		logger.info("----Exercice 03----");
-
 	}
 }

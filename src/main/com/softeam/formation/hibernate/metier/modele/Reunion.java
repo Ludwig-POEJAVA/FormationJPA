@@ -27,6 +27,7 @@ public class Reunion
 	@ManyToOne
 	@JoinColumn(name = "SALLE_ID_fk")
 	private Salle salle;
+
 	@ManyToOne
 	@JoinColumn(name = "PROJET_ID_fk")
 	private Projet projet;

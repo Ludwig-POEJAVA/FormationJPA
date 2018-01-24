@@ -22,6 +22,10 @@ public class Projet
 		this.name = name;
 	}
 
+	public Projet()
+	{
+	}
+
 	public long getProjet_id()
 	{
 		return projet_id;

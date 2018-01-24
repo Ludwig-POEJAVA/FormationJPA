@@ -25,7 +25,7 @@ public class SalleDAO
 
 		tx.commit();
 		em.close();
-		System.out.println("======= ai créé SALLE avec ID " + s.getSalle_id());
+		System.out.println("\n======= ai créé SALLE avec ID " + s.getSalle_id() + "\n");
 		return s.getSalle_id();
 	}
 
