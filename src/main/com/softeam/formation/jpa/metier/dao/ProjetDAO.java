@@ -15,7 +15,7 @@ public class ProjetDAO
 		ProjetDAO.emf = emf;
 	}
 
-	public int ajouter(Projet p)
+	public long ajouter(Projet p)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -25,7 +25,8 @@ public class ProjetDAO
 
 		tx.commit();
 		em.close();
-		return 0;
+		System.out.println("======= ai créé PROJET avec ID " + p.getProjet_id());
+		return p.getProjet_id();
 	}
 
 	public Projet lire()

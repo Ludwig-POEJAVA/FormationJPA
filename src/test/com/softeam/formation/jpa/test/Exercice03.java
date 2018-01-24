@@ -34,11 +34,15 @@ public class Exercice03
 		salles.add(new Salle("salle 007", 700));
 		salles.add(new Salle("salle Mary Poppins", 1960));
 
-		reunions.add(new Reunion("Réunion r01", 100022, salles.get(0), projets.get(1), new Date(), null));
-		reunions.add(new Reunion("Réunion r02", 200700, salles.get(1), projets.get(1), new Date(), null));
-		reunions.add(new Reunion("Réunion r03", 301960, salles.get(2), projets.get(2), new Date(), null));
+		// public Reunion(String name, long id, Salle salle, Projet projet, Date debut,
+		// Date fin)
+		reunions.add(new Reunion("Réunion r01", salles.get(0), projets.get(0), new Date(), null));
+		reunions.add(new Reunion("Réunion r02", salles.get(1), projets.get(1), new Date(), null));
+		reunions.add(new Reunion("Réunion r03", salles.get(2), projets.get(2), new Date(), null));
 
+		System.out.println("\n\n\nCA VA SPAMMER\n\n\n");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hibernate");
+		System.out.println("\n\n\nCA A SPAMMÉ\n\n\n");
 
 		ProjetDAO pDAO = new ProjetDAO(emf);
 		SalleDAO sDAO = new SalleDAO(emf);

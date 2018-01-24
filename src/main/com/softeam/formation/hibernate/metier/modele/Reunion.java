@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,7 +17,9 @@ public class Reunion
 {
 	@Id
 	@Column(name = "REUNION_ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long reunion_id;
+
 	private String name;
 	private Date dateDebut;
 	private Date dateFin;
@@ -27,10 +31,9 @@ public class Reunion
 	@JoinColumn(name = "PROJET_ID_fk")
 	private Projet projet;
 
-	public Reunion(String name, long id, Salle salle, Projet projet, Date debut, Date fin)
+	public Reunion(String name, Salle salle, Projet projet, Date debut, Date fin)
 	{
 		this.name = name;
-		this.reunion_id = id;
 		this.salle = salle;
 		this.projet = projet;
 		this.dateDebut = debut;
