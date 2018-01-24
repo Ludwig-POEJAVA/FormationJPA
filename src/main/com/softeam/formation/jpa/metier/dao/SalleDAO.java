@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
+import com.softeam.formation.hibernate.metier.modele.Projet;
 import com.softeam.formation.hibernate.metier.modele.Salle;
 
 public class SalleDAO
@@ -29,8 +30,17 @@ public class SalleDAO
 		return s.getSalle_id();
 	}
 
-	public Salle lire()
+	public Salle lire(long id)
 	{
-		return null;
+
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+
+		Salle s = em.find(Salle.class, id);
+
+		tx.commit();
+		em.close();
+		return s;
 	}
 }

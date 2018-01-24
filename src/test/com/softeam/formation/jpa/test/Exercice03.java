@@ -61,15 +61,15 @@ public class Exercice03
 		for (Reunion r : reunions)
 			rDAO.ajouter(r);
 
-		System.out.println("\n\n\n\n\nWOOT\n\n\n\n\n\n\n\n\n\n\n");
+		// purger les projets
 		projets.clear();
+		// retrouver les projets depuis la BDD (par exemple)
 		for (Long p : p_id)
 		{
 			projets.add(ProjetDAO.lire(p));
 
 			System.out.println(projets.get(projets.size() - 1).getName());
 		}
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 		emf.close();
 		logger.info("----Exercice 03----");
