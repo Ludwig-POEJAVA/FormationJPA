@@ -21,7 +21,7 @@ public class PersonneDAO
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 
-		em.remove(em.merge(p));
+		em.merge(p);
 
 		tx.commit();
 		em.close();
@@ -33,7 +33,7 @@ public class PersonneDAO
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 
-		em.merge(p);
+		em.remove(em.merge(p));
 
 		tx.commit();
 		em.close();
