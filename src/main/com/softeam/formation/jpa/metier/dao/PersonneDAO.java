@@ -4,42 +4,51 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
-import com.softeam.formation.hibernate.metier.modele.Reunion;
+import com.softeam.formation.hibernate.metier.modele.Personne;
 
-public class ReunionDAO
+public class PersonneDAO
 {
 	static EntityManagerFactory emf;
 
-	public ReunionDAO(EntityManagerFactory emf)
+	public PersonneDAO(EntityManagerFactory emf)
 	{
-		ReunionDAO.emf = emf;
+		SalleDAO.emf = emf;
 	}
 
-	public long ajouter(Reunion r)
+	public boolean modifier(Personne p)
+	{
+		return false;
+	}
+
+	public boolean supprimer(Personne p)
+	{
+		return false;
+	}
+
+	public long ajouter(Personne p)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 
-		em.persist(r);
+		em.persist(p);
 
 		tx.commit();
 		em.close();
-		System.out.println("\n======= ai créé REUNION avec ID " + r.getReunion_id() + "\n");
-		return r.getReunion_id();
+		return 0 / 0; // TODO
 	}
 
-	public Reunion lire(long id)
+	public Personne lire(long id)
 	{
 
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 
-		Reunion r = em.find(Reunion.class, id);
+		Personne p = em.find(Personne.class, id);
 
 		tx.commit();
 		em.close();
-		return r;
+		return p;
 	}
 }

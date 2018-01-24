@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
-import com.softeam.formation.hibernate.metier.modele.Projet;
 import com.softeam.formation.hibernate.metier.modele.Salle;
 
 public class SalleDAO
