@@ -8,14 +8,14 @@ import com.softeam.formation.hibernate.metier.modele.Reunion;
 
 public class ReunionDAO
 {
-	EntityManagerFactory emf;
+	static EntityManagerFactory emf;
 
 	public ReunionDAO(EntityManagerFactory emf)
 	{
 		this.emf = emf;
 	}
 
-	public int ajouter(Reunion r)
+	public static int ajouter(Reunion r)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();

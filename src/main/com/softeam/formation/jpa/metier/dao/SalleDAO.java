@@ -8,14 +8,14 @@ import com.softeam.formation.hibernate.metier.modele.Salle;
 
 public class SalleDAO
 {
-	EntityManagerFactory emf;
+	static EntityManagerFactory emf;
 
 	public SalleDAO(EntityManagerFactory emf)
 	{
 		this.emf = emf;
 	}
 
-	public int ajouter(Salle s)
+	public static int ajouter(Salle s)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();

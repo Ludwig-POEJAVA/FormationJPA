@@ -43,6 +43,15 @@ public class Exercice03
 		SalleDAO sDAO = new SalleDAO(emf);
 		ReunionDAO rDAO = new ReunionDAO(emf);
 
+		for (Projet p : projets)
+			ProjetDAO.ajouter(p);
+
+		for (Salle s : salles)
+			SalleDAO.ajouter(s);
+
+		for (Reunion r : reunions)
+			ReunionDAO.ajouter(r);
+
 		emf.close();
 
 		logger.info("----Exercice 03----");

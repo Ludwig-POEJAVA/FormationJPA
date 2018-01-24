@@ -8,14 +8,14 @@ import com.softeam.formation.hibernate.metier.modele.Projet;
 
 public class ProjetDAO
 {
-	EntityManagerFactory emf;
+	static EntityManagerFactory emf;
 
 	public ProjetDAO(EntityManagerFactory emf)
 	{
 		this.emf = emf;
 	}
 
-	public int ajouter(Projet p)
+	public static int ajouter(Projet p)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
