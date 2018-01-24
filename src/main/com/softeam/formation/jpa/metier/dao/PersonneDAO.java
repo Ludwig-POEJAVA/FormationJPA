@@ -8,21 +8,35 @@ import com.softeam.formation.hibernate.metier.modele.Personne;
 
 public class PersonneDAO
 {
-	static EntityManagerFactory emf;
+	EntityManagerFactory emf;
 
 	public PersonneDAO(EntityManagerFactory emf)
 	{
-		SalleDAO.emf = emf;
+		this.emf = emf;
 	}
 
-	public boolean modifier(Personne p)
+	public void modifier(Personne p)
 	{
-		return false;
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+
+		em.remove(em.merge(p));
+
+		tx.commit();
+		em.close();
 	}
 
-	public boolean supprimer(Personne p)
+	public void supprimer(Personne p)
 	{
-		return false;
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+
+		em.merge(p);
+
+		tx.commit();
+		em.close();
 	}
 
 	public long ajouter(Personne p)
@@ -35,19 +49,13 @@ public class PersonneDAO
 
 		tx.commit();
 		em.close();
-		return 0 / 0; // TODO
+		return p.getPersonne_id(); // TODO
 	}
 
 	public Personne lire(long id)
 	{
-
 		EntityManager em = emf.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-
 		Personne p = em.find(Personne.class, id);
-
-		tx.commit();
 		em.close();
 		return p;
 	}

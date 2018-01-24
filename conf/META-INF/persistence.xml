@@ -12,6 +12,8 @@
 		<class>com.softeam.formation.hibernate.metier.modele.Projet</class>
 		<class>com.softeam.formation.hibernate.metier.modele.Reunion</class>
 		<class>com.softeam.formation.hibernate.metier.modele.Salle</class>
+		<class>com.softeam.formation.hibernate.metier.modele.Personne</class>
+		<class>com.softeam.formation.hibernate.metier.modele.Identite</class>
 
 		<properties>
 		<!-- Configuration de l'accès à la base de données -->

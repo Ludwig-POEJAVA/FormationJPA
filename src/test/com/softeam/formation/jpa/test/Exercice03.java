@@ -66,7 +66,7 @@ public class Exercice03
 		// retrouver les projets depuis la BDD (par exemple)
 		for (Long p : p_id)
 		{
-			projets.add(ProjetDAO.lire(p));
+			projets.add(pDAO.lire(p));
 
 			System.out.println(projets.get(projets.size() - 1).getName());
 		}

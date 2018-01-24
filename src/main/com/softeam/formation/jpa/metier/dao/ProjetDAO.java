@@ -8,11 +8,11 @@ import com.softeam.formation.hibernate.metier.modele.Projet;
 
 public class ProjetDAO
 {
-	static EntityManagerFactory emf;
+	EntityManagerFactory emf;
 
 	public ProjetDAO(EntityManagerFactory emf)
 	{
-		ProjetDAO.emf = emf;
+		this.emf = emf;
 	}
 
 	public long ajouter(Projet p)
@@ -25,20 +25,13 @@ public class ProjetDAO
 
 		tx.commit();
 		em.close();
-		System.out.println("\n======= ai créé PROJET avec ID " + p.getProjet_id() + "\n");
 		return p.getProjet_id();
 	}
 
-	public static Projet lire(long id)
+	public Projet lire(long id)
 	{
-
 		EntityManager em = emf.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-
 		Projet p = em.find(Projet.class, id);
-
-		tx.commit();
 		em.close();
 		return p;
 	}

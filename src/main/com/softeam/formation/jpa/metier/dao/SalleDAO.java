@@ -8,11 +8,11 @@ import com.softeam.formation.hibernate.metier.modele.Salle;
 
 public class SalleDAO
 {
-	static EntityManagerFactory emf;
+	EntityManagerFactory emf;
 
 	public SalleDAO(EntityManagerFactory emf)
 	{
-		SalleDAO.emf = emf;
+		this.emf = emf;
 	}
 
 	public long ajouter(Salle s)
@@ -25,20 +25,13 @@ public class SalleDAO
 
 		tx.commit();
 		em.close();
-		System.out.println("\n======= ai créé SALLE avec ID " + s.getSalle_id() + "\n");
 		return s.getSalle_id();
 	}
 
 	public Salle lire(long id)
 	{
-
 		EntityManager em = emf.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-
 		Salle s = em.find(Salle.class, id);
-
-		tx.commit();
 		em.close();
 		return s;
 	}

@@ -2,10 +2,14 @@ package com.softeam.formation.hibernate.metier.modele;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "T_PERSONNE")
 public class Personne
 {
 	@Id
@@ -14,6 +18,7 @@ public class Personne
 	private long personne_id;
 	private String email;
 	private int age;
+
 	@Embedded
 	private Identite identite;
 
@@ -21,10 +26,11 @@ public class Personne
 	{
 	}
 
-	public Personne(String name, int age)
+	public Personne(String email, int age, Identite identite)
 	{
-		this.email = name;
+		this.email = email;
 		this.age = age;
+		this.identite = identite;
 	}
 
 	public long getPersonne_id()
@@ -67,4 +73,8 @@ public class Personne
 		this.identite = identite;
 	}
 
+	public String toString()
+	{
+		return "<PERSONNE>" + "{email : " + email + " , " + "age : " + age + " , " + "identite : " + identite + "}";
+	}
 }

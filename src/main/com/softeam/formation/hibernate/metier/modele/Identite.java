@@ -1,17 +1,10 @@
 package com.softeam.formation.hibernate.metier.modele;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Embeddable
 public class Identite
 {
-	@Id
-	@Column(name = "IDENTITE_ID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long identite_id;
 
 	private String nom;
@@ -69,4 +62,8 @@ public class Identite
 		this.initiales = initiales;
 	}
 
+	public String toString()
+	{
+		return "<IDENTITE>" + "{nomn : " + nom + " , " + "prenom : " + prenom + "}";
+	}
 }
