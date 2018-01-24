@@ -5,8 +5,6 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Identite
 {
-	private long identite_id;
-
 	private String nom;
 	private String prenom;
 	private String initiales;
@@ -20,16 +18,6 @@ public class Identite
 		this.nom = nom;
 		this.prenom = prenom;
 		this.initiales = initiales;
-	}
-
-	public long getIdentite_id()
-	{
-		return identite_id;
-	}
-
-	public void setIdentite_id(long identite_id)
-	{
-		this.identite_id = identite_id;
 	}
 
 	public String getNom()
