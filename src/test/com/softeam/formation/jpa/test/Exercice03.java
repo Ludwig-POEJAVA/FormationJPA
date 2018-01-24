@@ -1,6 +1,8 @@
 package com.softeam.formation.jpa.test;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -32,10 +34,9 @@ public class Exercice03
 		salles.add(new Salle("salle 007", 700));
 		salles.add(new Salle("salle Mary Poppins", 1960));
 
-		// public Reunion(String name, long id, Salle salle, Projet projet)
-		reunions.add(new Reunion("projet 001", 100022, salles.get(0), projets.get(1), null, null));
-		reunions.add(new Reunion("projet 001", 200700, salles.get(1), projets.get(1), null, null));
-		reunions.add(new Reunion("projet 001", 301960, salles.get(1), projets.get(1), null, null));
+		reunions.add(new Reunion("Réunion r01", 100022, salles.get(0), projets.get(1), new Date(), null));
+		reunions.add(new Reunion("Réunion r02", 200700, salles.get(1), projets.get(1), new Date(), null));
+		reunions.add(new Reunion("Réunion r03", 301960, salles.get(2), projets.get(2), new Date(), null));
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hibernate");
 
@@ -44,13 +45,13 @@ public class Exercice03
 		ReunionDAO rDAO = new ReunionDAO(emf);
 
 		for (Projet p : projets)
-			ProjetDAO.ajouter(p);
+			pDAO.ajouter(p);
 
 		for (Salle s : salles)
-			SalleDAO.ajouter(s);
+			sDAO.ajouter(s);
 
 		for (Reunion r : reunions)
-			ReunionDAO.ajouter(r);
+			rDAO.ajouter(r);
 
 		emf.close();
 

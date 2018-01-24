@@ -12,10 +12,10 @@ public class ProjetDAO
 
 	public ProjetDAO(EntityManagerFactory emf)
 	{
-		this.emf = emf;
+		ProjetDAO.emf = emf;
 	}
 
-	public static int ajouter(Projet p)
+	public int ajouter(Projet p)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();

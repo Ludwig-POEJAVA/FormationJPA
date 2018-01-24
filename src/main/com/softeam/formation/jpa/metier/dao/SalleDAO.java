@@ -12,10 +12,10 @@ public class SalleDAO
 
 	public SalleDAO(EntityManagerFactory emf)
 	{
-		this.emf = emf;
+		SalleDAO.emf = emf;
 	}
 
-	public static int ajouter(Salle s)
+	public int ajouter(Salle s)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();

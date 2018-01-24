@@ -12,10 +12,10 @@ public class ReunionDAO
 
 	public ReunionDAO(EntityManagerFactory emf)
 	{
-		this.emf = emf;
+		ReunionDAO.emf = emf;
 	}
 
-	public static int ajouter(Reunion r)
+	public int ajouter(Reunion r)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();

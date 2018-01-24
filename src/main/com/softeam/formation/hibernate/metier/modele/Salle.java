@@ -11,6 +11,7 @@ public class Salle
 {
 	@Id
 	@Column(name = "SALLE_ID")
+	private long salle_id;
 	private String name;
 	private int nbPlaces;
 
@@ -20,14 +21,19 @@ public class Salle
 		this.nbPlaces = nbPlaces;
 	}
 
+	public long getSalle_id()
+	{
+		return salle_id;
+	}
+
+	public void setSalle_id(long salle_id)
+	{
+		this.salle_id = salle_id;
+	}
+
 	public String getName()
 	{
 		return name;
-	}
-
-	public int getSalle_id()
-	{
-		return nbPlaces;
 	}
 
 	public void setName(String name)
@@ -35,8 +41,14 @@ public class Salle
 		this.name = name;
 	}
 
-	public void setSalle_id(int nbPlaces)
+	public int getNbPlaces()
+	{
+		return nbPlaces;
+	}
+
+	public void setNbPlaces(int nbPlaces)
 	{
 		this.nbPlaces = nbPlaces;
 	}
+
 }

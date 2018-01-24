@@ -37,19 +37,9 @@ public class Reunion
 		this.dateFin = fin;
 	}
 
-	public String getName()
-	{
-		return name;
-	}
-
 	public long getReunion_id()
 	{
 		return reunion_id;
-	}
-
-	public void setName(String name)
-	{
-		this.name = name;
 	}
 
 	public void setReunion_id(long reunion_id)
@@ -57,14 +47,24 @@ public class Reunion
 		this.reunion_id = reunion_id;
 	}
 
-	public Date getDatedebut()
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public Date getDateDebut()
 	{
 		return dateDebut;
 	}
 
-	public void setDatedebut(Date datedebut)
+	public void setDateDebut(Date dateDebut)
 	{
-		this.dateDebut = datedebut;
+		this.dateDebut = dateDebut;
 	}
 
 	public Date getDateFin()
@@ -76,4 +76,25 @@ public class Reunion
 	{
 		this.dateFin = dateFin;
 	}
+
+	public Salle getSalle()
+	{
+		return salle;
+	}
+
+	public void setSalle(Salle salle)
+	{
+		this.salle = salle;
+	}
+
+	public Projet getProjet()
+	{
+		return projet;
+	}
+
+	public void setProjet(Projet projet)
+	{
+		this.projet = projet;
+	}
+
 }

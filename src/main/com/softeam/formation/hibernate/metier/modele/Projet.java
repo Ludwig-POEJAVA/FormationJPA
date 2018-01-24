@@ -11,11 +11,22 @@ public class Projet
 {
 	@Id
 	@Column(name = "PROJET_ID")
+	private long projet_id;
 	private String name;
 
 	public Projet(String name)
 	{
 		this.name = name;
+	}
+
+	public long getProjet_id()
+	{
+		return projet_id;
+	}
+
+	public void setProjet_id(long projet_id)
+	{
+		this.projet_id = projet_id;
 	}
 
 	public String getName()
@@ -27,4 +38,5 @@ public class Projet
 	{
 		this.name = name;
 	}
+
 }
