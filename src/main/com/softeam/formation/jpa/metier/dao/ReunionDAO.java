@@ -15,7 +15,7 @@ public class ReunionDAO
 		ReunionDAO.emf = emf;
 	}
 
-	public int ajouter(Reunion r)
+	public long ajouter(Reunion r)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -25,7 +25,8 @@ public class ReunionDAO
 
 		tx.commit();
 		em.close();
-		return 0;
+		System.out.println("======= ai créé REUNION avec ID " + r.getReunion_id());
+		return r.getReunion_id();
 	}
 
 	public Reunion lire()

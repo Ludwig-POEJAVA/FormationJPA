@@ -15,7 +15,7 @@ public class SalleDAO
 		SalleDAO.emf = emf;
 	}
 
-	public int ajouter(Salle s)
+	public long ajouter(Salle s)
 	{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -25,7 +25,8 @@ public class SalleDAO
 
 		tx.commit();
 		em.close();
-		return 0;
+		System.out.println("======= ai créé SALLE avec ID " + s.getSalle_id());
+		return s.getSalle_id();
 	}
 
 	public Salle lire()
